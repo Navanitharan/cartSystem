@@ -3,11 +3,12 @@ import ProductDetails from "./ProductDetails"
 import Subtotal from "./Subtotal"
 import TotalPrice from "./TotalPrice"
 
+//creates the context to share the values over the components
 const PriceContext = createContext();
 
 const CartPage = () => {
 
-
+ //Product objects 
  const [products,setProducts]=useState([
   {
       "id": 1,
@@ -103,6 +104,7 @@ const CartPage = () => {
 
   const [cartItems, setCartItems] = useState({});
 
+  //update the price of the cart
   let cartPriceUpdate =()=>{
     let Total=0;
     for(let key in cartItems){
@@ -110,11 +112,12 @@ const CartPage = () => {
     }
     return Total;
   }
-    
+  //update the quantity and price of the product in the cart  
   const updatePricefun = (value,productPrice,id)=>{
     cartItems[id].quantity=parseInt(value);
     cartItems[id].totalPrice=(productPrice * value);
 
+    //updates the cart after changing the product quantity
     setUpdatePrice(cartPriceUpdate())
   }
 

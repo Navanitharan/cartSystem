@@ -8,3 +8,15 @@ select{
     border: none;
     color: chocolate;
 }
+.productdetails{
+    display: flex;
+    
+}
+.product-info{
+    display: flex;
+}
+@media (max-width:768px) {
+    .product-info{
+        display: block;
+    }
+}
