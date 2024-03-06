@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react"
 import { PriceContext } from "./CartPage"
-import Productcard from "./Productcard"
+
   
 
 const ProductDetails = () => {
